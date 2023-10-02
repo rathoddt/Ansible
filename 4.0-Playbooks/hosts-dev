@@ -1,0 +1,11 @@
+# hosts-dev
+[webservers]
+52.20.166.74
+3.209.221.137
+
+[loadbalancers]
+3.229.151.112
+
+# [local] means control host
+[local]
+control
