@@ -1,11 +1,11 @@
-# hosts-dev
-[webservers]
-52.20.166.74
-3.209.221.137
-
-[loadbalancers]
-3.229.151.112
-
-# [local] means control host
-[local]
-control
+# hosts-dev                                                                
+[webservers]                                                               
+app1 ansible_host=52.20.166.74                                             
+app2 ansible_host=3.209.221.137                                            
+                                                                           
+[loadbalancers]                                                            
+lb1 ansible_host=3.229.151.112                                             
+                                                                           
+# [local] means control host                                               
+[local]                                                                    
+control ansible_connection=local 
