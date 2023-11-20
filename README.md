@@ -16,3 +16,5 @@ Ansible tasks are ad hoc commands executed against inventory
 
 Modules link  
 https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html
+
+`hostvars` variable that Ansible creates during gathering facts steps.
