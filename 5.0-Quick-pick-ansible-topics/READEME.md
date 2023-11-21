@@ -1,3 +1,6 @@
+
+## 5.1 Roles
+```
 cp -r ansible/ ansible-v2/
 ls
 ls ansible-v2/
@@ -50,3 +53,25 @@ cp ../key.pem
 cp ../key.pem .
 ansible-playbook ping.yaml
 ansible-playbook setup-app.yml
+```
+
+
+## 5.2 Check Mode
+Dry run the heck book
+```
+ansible-playbook playbooks/setup-app-check-mode.yml --check
+```
+
+
+## 5.3 Error handling
+```
+vim playbooks/check-status.yml
+ansible-playbook playbooks/check-status.yml
+```
+
+## 5.4 Tags
+```
+ansible-playbook playbooks/setup-tags.yml --tags upload
+ansible-playbook playbooks/setup-tags.yml --tags create-info-page
+ansible-playbook playbooks/setup-tags.yml --skip-tags upload
+```
