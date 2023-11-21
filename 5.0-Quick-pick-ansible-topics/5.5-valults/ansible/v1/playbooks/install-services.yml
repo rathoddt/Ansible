@@ -1,0 +1,23 @@
+#install services
+---
+  - hosts: loadbalancers
+    become: true
+    tasks: 
+     - name: Installing apache on load balancer
+       yum: name=httpd state=present
+     - name: Ensure apache starts on boot
+       service: name=httpd state=started enabled=yes
+
+  - hosts: webservers
+    become: true
+    tasks: 
+     - name: Installing apche and PHP on web servers
+       yum: 
+         name:
+           - httpd
+           - php
+         state: present
+     - name: Ensure apache starts on boot
+       service: name=httpd state=started enabled=yes
+
+
