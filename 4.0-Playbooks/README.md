@@ -14,7 +14,7 @@ ansible-playbook playbooks/uname.yaml
 ```
 
 
-## 4.2
+## 4.2 Playbooks, service handlers
 ```
 ansible-playbook playbooks/yum-update-01.yml
 cat hosts-dev
@@ -110,7 +110,8 @@ vim playbooks/check-status.yml
 ansible-playbook playbooks/check-status.yml
 vim playbooks/check-status.yml
 ansible-playbook playbooks/check-status.yml
-ansible -m service "name=httpd state=stopped" -become loadbalancers
+
+
 ansible -m service -a "name=httpd state=stopped" -become loadbalancers
 ansible-playbook playbooks/check-status.yml
 ansible -m service -a "name=httpd state=started" -become loadbalancers
@@ -119,3 +120,13 @@ vim playbooks/all-playbooks.yml
 ansible-playbook playbooks/all-playbooks.yml
 
 ```
+
+## 4.3 Variables
+
+```
+http://3.229.151.112/balancer-manager
+```
+Create variables from info returned tasks ran using `register`.
+
+Use the `debug` module anytime to see variables and debug out playbooks
+
